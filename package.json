@@ -1,0 +1,16 @@
+{
+    "name": "exp-vulcanize",
+    "description": "Vulcanize HTML Imports",
+    "version": "0.1.0",
+    "keywords": [
+        "expansive-plugin",
+        "vulcanize"
+    ],
+    "licenses": "GPL",
+    "scripts": {
+        "postcache": {
+            "script": "Cmd.locate('vulcanize') || run('npm install -g vulcanize')"
+        }
+    },
+    "install": false
+}
