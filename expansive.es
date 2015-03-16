@@ -2,8 +2,9 @@ Expansive.load({
     transforms: {
 //  MOB - rename
         name:       'vulcanize-html',
-        input:      '*',
-        output:     '*',
+        mappings: {
+            'html'
+        }
         options:    ''
         script: `
             function transform(contents, meta, service) {

@@ -7,10 +7,16 @@
         "vulcanize"
     ],
     "licenses": "GPL",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/embedthis/exp-vulcanize.git"
+    },
     "scripts": {
         "postcache": {
             "script": "Cmd.locate('vulcanize') || run('npm install -g vulcanize')"
         }
     },
-    "install": false
+    "pak": {
+        "version": ">=0.10"
+    }
 }
