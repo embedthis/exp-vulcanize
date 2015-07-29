@@ -1,7 +1,7 @@
 {
     "name": "exp-vulcanize",
     "description": "Vulcanize HTML Imports",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "keywords": [
         "expansive-plugin",
         "vulcanize"
@@ -13,7 +13,7 @@
     },
     "scripts": {
         "postcache": {
-            "script": "Cmd.locate('vulcanize') || run('npm install -g vulcanize')"
+            "script": "if (!Cmd.locate('vulcanize')) { if (!Cmd.locate('npm')) { throw 'Cannot locate the \"npm\" utility.' } else { run('npm install -g vulcanize')}}"
         }
     },
     "pak": {

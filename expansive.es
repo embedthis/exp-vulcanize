@@ -1,7 +1,6 @@
 Expansive.load({
     transforms: {
-//  MOB - rename
-        name:       'vulcanize-html',
+        name: 'vulcanize-html',
         mappings: {
             'html'
         }
