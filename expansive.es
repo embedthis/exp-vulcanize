@@ -1,26 +1,28 @@
 Expansive.load({
-    transforms: {
-        name: 'vulcanize-html',
-        mappings: {
-            'html'
-        }
-        options:    ''
-        script: `
-            function transform(contents, meta, service) {
-                let vulcanize = Cmd.locate('vulcanize')
-                if (!vulcanize) {
-                    trace('Warn', 'Cannot find vulcanize')
-                    return contents
+    services: {
+        name:    'vulcanize-html',
+        options: ''
+
+        transforms: {
+            mappings: 'html',
+
+            init: function(transform) {
+                transform.vulcanize = Cmd.locate('vulcanize')
+                if (!transform.vulcanize) {
+                    fatal('Cannot find vulcanize')
                 }
+            },
+
+            render: function(contents, meta, transform) {
                 let path = Path('.vulcanize.tmp')
                 try {
-                    runFile(vulcanize + service.options + ' -o ' + path, contents, meta)
+                    runFile(vulcanize + transform.service.options + ' -o ' + path, contents, meta)
                     contents = path.readString() + '\n'
                 } finally {
                     path.remove()
                 }
                 return contents
             }
-        `
+        }
     }
 })
