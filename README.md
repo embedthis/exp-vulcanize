@@ -11,7 +11,7 @@ Provides the 'vulcanize-html' service.
 
 ### To configure in expansive.json:
 
-* vulcanize.enable &mdash; Enable running vulcanize to flatten HTML files and catenate all imports.
+* enable &mdash; Enable running vulcanize to flatten HTML files and catenate all imports.
 
 ```
 {
